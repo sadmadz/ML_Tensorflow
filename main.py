@@ -32,3 +32,13 @@ dropout = 0.5
 X = tf.placeholder("float", [None, n_input])
 Y = tf.placeholder("float", [None, n_output])
 keep_prob = tf.placeholder(tf.float32)
+
+weights = {
+'w1': tf.Variable(tf.truncated_normal([n_input, n_hidden1],
+stddev=0.1)),
+'w2': tf.Variable(tf.truncated_normal([n_hidden1, n_hidden2],
+stddev=0.1)),
+'w3': tf.Variable(tf.truncated_normal([n_hidden2, n_hidden3],
+stddev=0.1)),
+'out': tf.Variable(tf.truncated_normal([n_hidden3, n_output],stddev=0.1)),
+}
